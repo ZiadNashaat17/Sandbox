@@ -1,0 +1,116 @@
+[20:21:59.161] [32mINFO[39m (30500): [36mHome page accessed [39m
+[20:21:59.165] [32mINFO[39m (30500): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": 1,
+      "method": "GET",
+      "url": "/",
+      "query": {},
+      "params": {},
+      "headers": {
+        "user-agent": "PostmanRuntime/7.51.0",
+        "accept": "*/*",
+        "postman-token": "76b74016-fb4d-4606-96ee-be1dd22e589a",
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 4794
+    }
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-powered-by": "Express",
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "11",
+        "etag": "W/\"b-Kq5sNclPz7QV2+lfQIuc6R7oRu0\""
+      }
+    }
+    [35mresponseTime[39m: 5
+[20:22:26.092] [32mINFO[39m (30500): [36mHome page accessed [39m
+[20:22:26.093] [32mINFO[39m (30500): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": 2,
+      "method": "GET",
+      "url": "/",
+      "query": {},
+      "params": {},
+      "headers": {
+        "user-agent": "PostmanRuntime/7.51.0",
+        "accept": "*/*",
+        "postman-token": "90474b32-0f4b-49d7-9c98-b4f6e9589bfd",
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 4807
+    }
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-powered-by": "Express",
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "11",
+        "etag": "W/\"b-Kq5sNclPz7QV2+lfQIuc6R7oRu0\""
+      }
+    }
+    [35mresponseTime[39m: 1
+[20:22:32.751] [32mINFO[39m (30500): [36mHome page accessed [39m
+[20:22:32.752] [32mINFO[39m (30500): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": 3,
+      "method": "GET",
+      "url": "/",
+      "query": {},
+      "params": {},
+      "headers": {
+        "user-agent": "PostmanRuntime/7.51.0",
+        "accept": "*/*",
+        "postman-token": "ca71a002-19ce-47c6-9b27-34007c6f71e3",
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 4810
+    }
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-powered-by": "Express",
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "11",
+        "etag": "W/\"b-Kq5sNclPz7QV2+lfQIuc6R7oRu0\""
+      }
+    }
+    [35mresponseTime[39m: 1
+[20:23:12.541] [32mINFO[39m (30500): [36mHome page accessed [39m
+[20:23:12.542] [32mINFO[39m (30500): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": 4,
+      "method": "GET",
+      "url": "/",
+      "query": {},
+      "params": {},
+      "headers": {
+        "user-agent": "PostmanRuntime/7.51.0",
+        "accept": "*/*",
+        "postman-token": "d45d3219-46ad-42d4-a13c-848f239790a3",
+        "host": "localhost:4000",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 5908
+    }
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-powered-by": "Express",
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "11",
+        "etag": "W/\"b-Kq5sNclPz7QV2+lfQIuc6R7oRu0\""
+      }
+    }
+    [35mresponseTime[39m: 1
