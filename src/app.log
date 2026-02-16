@@ -1,0 +1,26 @@
+[2026-02-12T09:40:18.242Z] [ERROR] Failed to send verification: The phone number is unverified. Trial accounts cannot send messages to unverified numbers; verify it at twilio.com/user/account/phone-numbers/verified
+[2026-02-12T09:40:18.244Z] [INFO] request errored
+[2026-02-12T09:40:18.341Z] [INFO] request completed
+[2026-02-12T09:43:46.192Z] [ERROR] Failed to send verification: The phone number is unverified. Trial accounts cannot send messages to unverified numbers; verify it at twilio.com/user/account/phone-numbers/verified
+[2026-02-12T09:43:46.195Z] [INFO] request errored
+[2026-02-12T09:43:47.343Z] [ERROR] Failed to send verification: The phone number is unverified. Trial accounts cannot send messages to unverified numbers; verify it at twilio.com/user/account/phone-numbers/verified
+[2026-02-12T09:43:47.344Z] [INFO] request errored
+[2026-02-12T09:43:48.747Z] [ERROR] Failed to send verification: The phone number is unverified. Trial accounts cannot send messages to unverified numbers; verify it at twilio.com/user/account/phone-numbers/verified
+[2026-02-12T09:43:48.748Z] [INFO] request errored
+[2026-02-15T09:02:10.734Z] [ERROR] Failed to send verification: The phone number is unverified. Trial accounts cannot send messages to unverified numbers; verify it at twilio.com/user/account/phone-numbers/verified
+[2026-02-15T09:02:10.737Z] [INFO] request errored
+[2026-02-15T09:02:19.638Z] [INFO] request completed
+[2026-02-15T09:02:24.731Z] [INFO] request completed
+[2026-02-15T09:25:30.130Z] [ERROR] Failed to send verification: The number +20106352XXXX is unverified. Trial accounts cannot send messages to unverified numbers; verify +20106352XXXX at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers
+[2026-02-15T09:25:30.133Z] [INFO] request errored
+[2026-02-16T09:26:57.653Z] [ERROR] Failed to send verification: The number +20106352XXXX is unverified. Trial accounts cannot send messages to unverified numbers; verify +20106352XXXX at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers
+[2026-02-16T09:26:57.656Z] [INFO] request errored
+[2026-02-16T09:27:23.761Z] [INFO] undefined
+[2026-02-16T09:27:24.191Z] [ERROR] Failed to send verification: The number +20106352XXXX is unverified. Trial accounts cannot send messages to unverified numbers; verify +20106352XXXX at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers
+[2026-02-16T09:27:24.194Z] [INFO] request errored
+[2026-02-16T09:28:01.245Z] [INFO] undefined
+[2026-02-16T09:28:02.095Z] [ERROR] Failed to send verification: The number +20106352XXXX is unverified. Trial accounts cannot send messages to unverified numbers; verify +20106352XXXX at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers
+[2026-02-16T09:28:02.098Z] [INFO] request errored
+[2026-02-16T09:28:28.549Z] [INFO] undefined
+[2026-02-16T09:28:28.979Z] [ERROR] Failed to send verification: The number +20106352XXXX is unverified. Trial accounts cannot send messages to unverified numbers; verify +20106352XXXX at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers
+[2026-02-16T09:28:28.981Z] [INFO] request errored
