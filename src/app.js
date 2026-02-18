@@ -56,7 +56,7 @@ app.get('/generate-chart', async(req,res)=>{
 
   const buffer = await res.arrayBuffer();
   const base64 = Buffer.from(buffer).toString('base64');
-
+  // doc.addImage(base64, 'PNG', margin, currentY, chartWidth, chartHeight);
 })
 
 app.get("/error", (req, res) => {
