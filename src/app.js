@@ -28,9 +28,9 @@ app.get("/send-verification", async (req, res) => {
     logger.info({otp})
 
     const verification = await client.messages.create({
-      body: 'Hello there',
+      body: `Your OTP is ${otp} don't share it with anyone.`,
       from: '+16615901265',
-      to: '+201063520549',
+      to: '+18777804236',
       channel: 'sms',
     });
 
@@ -41,6 +41,23 @@ app.get("/send-verification", async (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 });
+
+app.get('/generate-chart', async(req,res)=>{
+  const config = encodeURIComponent(JSON.stringify({
+    type: 'bar',
+    data: {
+      labels: ['#1','#2','#3'],
+      datasets: [{label: 'Distance (KM)', data: [8.1, 5.4, 3.8]}]
+    }
+  }))
+
+  const res = await fetch(`https://quickchart.io/chart?width=500&height=300&chart=${config}`);
+  console.log(res);
+
+  const buffer = await res.arrayBuffer();
+  const base64 = Buffer.from(buffer).toString('base64');
+
+})
 
 app.get("/error", (req, res) => {
   logger.error("Something went wrong!"); // Logs an error message
