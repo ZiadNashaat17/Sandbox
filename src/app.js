@@ -1,3 +1,4 @@
+import PDFKit from 'pdfkit';
 import { config } from "dotenv";
 import express from "express";
 import PinoHttp from "pino-http";
@@ -42,21 +43,56 @@ app.get("/send-verification", async (req, res) => {
   }
 });
 
-app.get('/generate-chart', async(req,res)=>{
-  const config = encodeURIComponent(JSON.stringify({
+app.get('/generate-chart', async(req, res)=>{
+  const chartConfig = encodeURIComponent(JSON.stringify({
     type: 'bar',
     data: {
       labels: ['#1','#2','#3'],
       datasets: [{label: 'Distance (KM)', data: [8.1, 5.4, 3.8]}]
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'My Chart Name',
+          color: '#333333',       // Title color
+          font: {
+            size: 20,
+            weight: 'bold',       // Font weight
+            family: 'Arial'       // Font family
+          },
+          padding: {
+            top: 10,
+            bottom: 20
+          }
+        }
+      }
     }
-  }))
+  }));
 
-  const res = await fetch(`https://quickchart.io/chart?width=500&height=300&chart=${config}`);
-  console.log(res);
+  const chartRes = await fetch(`https://quickchart.io/chart?width=500&height=300&chart=${chartConfig}`);
+  console.log(chartRes);
 
-  const buffer = await res.arrayBuffer();
-  const base64 = Buffer.from(buffer).toString('base64');
-  // doc.addImage(base64, 'PNG', margin, currentY, chartWidth, chartHeight);
+  const buffer = await chartRes.arrayBuffer();
+  const imageBuffer = Buffer.from(buffer);
+
+  const doc = new PDFKit();
+
+  res.setHeader('Content-Type','application/pdf');
+  res.setHeader('Content-Disposition', 'attachment; filename=chart.pdf')
+
+  doc.pipe(res);
+
+  doc.fontSize(16).text('My Chart Report', {align: 'center'});
+  doc.moveDown();
+  doc.image(imageBuffer, {
+    fit: [500, 300],
+    align: 'center'
+  });
+
+  doc.end();
+
+  // res.status(200).json({ success: true, chart: imageBuffer });
 })
 
 app.get("/error", (req, res) => {

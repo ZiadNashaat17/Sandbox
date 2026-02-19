@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Trip Summary Demo — Toyota Corolla 2019</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    padding: 32px 24px;
+    color: #1a1a2e;
+  }
+
+  /* ── Header ── */
+  .header { margin-bottom: 28px; }
+  .header h1 { font-size: 22px; font-weight: 700; }
+  .header p  { font-size: 13px; color: #888; margin-top: 4px; }
+
+  /* ── KPI Row ── */
+  .kpi-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .kpi-card {
+    flex: 1;
+    background: white;
+    border-radius: 14px;
+    padding: 22px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-top: 4px solid #4f7df3;
+    min-width: 0;
+  }
+  .kpi-card.green  { border-top-color: #22c997; }
+  .kpi-card.orange { border-top-color: #f59e0b; }
+  .kpi-card.purple { border-top-color: #a78bfa; }
+  .kpi-label { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 0.6px; }
+  .kpi-value { font-size: 36px; font-weight: 800; color: #1a1a2e; line-height: 1.1; margin-top: 6px; }
+  .kpi-unit  { font-size: 14px; font-weight: 400; color: #aaa; margin-left: 3px; }
+  .kpi-sub   { font-size: 12px; color: #bbb; margin-top: 4px; }
+
+  /* ── Chart cards ── */
+  .chart-card {
+    background: white;
+    border-radius: 14px;
+    padding: 26px 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .chart-card h2 { font-size: 16px; font-weight: 700; }
+  .chart-card p  { font-size: 12px; color: #999; margin-top: 3px; margin-bottom: 20px; }
+  .chart-wrap { position: relative; height: 260px; }
+
+  /* ── Footer note ── */
+  .note {
+    text-align: center;
+    font-size: 12px;
+    color: #bbb;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Trip Summary — Toyota Corolla 2019</h1>
+  <p>10 Feb 2026 – 15 Feb 2026 &nbsp;·&nbsp; iot.bawq.com</p>
+</div>
+
+<!-- KPI Blocks -->
+<div class="kpi-row">
+  <div class="kpi-card">
+    <div class="kpi-label">Total Trips</div>
+    <div class="kpi-value">27<span class="kpi-unit">trips</span></div>
+    <div class="kpi-sub">across 3 active days</div>
+  </div>
+  <div class="kpi-card green">
+    <div class="kpi-label">Total Distance</div>
+    <div class="kpi-value">269.5<span class="kpi-unit">km</span></div>
+    <div class="kpi-sub">avg 10.0 km/trip</div>
+  </div>
+  <div class="kpi-card orange">
+    <div class="kpi-label">Total Duration</div>
+    <div class="kpi-value">10h<span class="kpi-unit">36m</span></div>
+    <div class="kpi-sub">avg 23.6 min/trip</div>
+  </div>
+  <div class="kpi-card purple">
+    <div class="kpi-label">Top Speed</div>
+    <div class="kpi-value">92<span class="kpi-unit">km/h</span></div>
+    <div class="kpi-sub">trip #25</div>
+  </div>
+</div>
+
+<!-- Line Chart -->
+<div class="chart-card">
+  <h2>Distance per Trip — Trend</h2>
+  <p>Kilometres covered across all 27 trips in chronological order</p>
+  <div class="chart-wrap">
+    <canvas id="lineChart"></canvas>
+  </div>
+</div>
+
+<!-- Distance Bar Chart -->
+<div class="chart-card">
+  <h2>Distance per Trip</h2>
+  <p>Bar view — easy to compare individual trips</p>
+  <div class="chart-wrap">
+    <canvas id="distanceChart"></canvas>
+  </div>
+</div>
+
+<!-- Duration Bar Chart -->
+<div class="chart-card">
+  <h2>Duration per Trip</h2>
+  <p>Time spent driving per trip (minutes)</p>
+  <div class="chart-wrap">
+    <canvas id="durationChart"></canvas>
+  </div>
+</div>
+
+<div class="note">Open this file in any browser — no server or install required.</div>
+
+<script src="charts.js"></script>
+</body>
+</html>
