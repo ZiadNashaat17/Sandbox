@@ -46,35 +46,35 @@ app.get('/send-verification', async (req, res) => {
   }
 });
 
-app.get('/generate-chart', async (req, res) => {
-  const chartConfig = encodeURIComponent(
-    JSON.stringify({
-      type: 'bar',
-      data: {
-        labels: ['#1', '#2', '#3'],
-        datasets: [{ label: 'Distance (KM)', data: [8.1, 5.4, 3.8] }],
-      },
-      options: {
-        plugins: {
-          title: {
-            display: true,
-            text: 'My Chart Name',
-            color: '#333333', // Title color
-            font: {
-              size: 20,
-              weight: 'bold', // Font weight
-              family: 'Arial', // Font family
-            },
-            padding: {
-              top: 10,
-              bottom: 20,
-            },
+const chartConfig = encodeURIComponent(
+  JSON.stringify({
+    type: 'bar',
+    data: {
+      labels: ['#1', '#2', '#3'],
+      datasets: [{ label: 'Distance (KM)', data: [8.1, 5.4, 3.8] }],
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'My Chart Name',
+          color: '#333333', // Title color
+          font: {
+            size: 20,
+            weight: 'bold', // Font weight
+            family: 'Arial', // Font family
+          },
+          padding: {
+            top: 10,
+            bottom: 20,
           },
         },
       },
-    })
-  );
+    },
+  })
+);
 
+app.get('/generate-chart', async (req, res) => {
   const chartRes = await fetch(
     `https://quickchart.io/chart?width=500&height=300&chart=${chartConfig}`
   );
