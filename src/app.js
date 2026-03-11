@@ -6,6 +6,8 @@ import PinoHttp from 'pino-http';
 import twilio from 'twilio';
 import logger from './logger.js';
 
+import testRoute from './routes/testRoute.js';
+
 config({ path: './.env' });
 
 const app = express();
@@ -101,6 +103,8 @@ app.get('/generate-chart', async (req, res) => {
 
   // res.status(200).json({ success: true, chart: imageBuffer });
 });
+
+app.use('/api', testRoute);
 
 app.get('/error', (req, res) => {
   logger.error('Something went wrong!'); // Logs an error message
