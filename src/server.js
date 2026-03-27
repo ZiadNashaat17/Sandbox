@@ -25,6 +25,7 @@ try {
   app.listen(port, () => {
     console.log(`Sandbox app running on port: ${port}`);
   });
+
 } catch (error) {
   console.log("App startup error: ", error);
   process.exit(1);
