@@ -10,7 +10,7 @@
 //     this.fonts = this.reportSettings.fonts;
 //     this.reportType = this.type;
 //   }
-  
+
 //   addNoDataMessage = () => {
 // 		console.log(this.reportSettings);
 //   }
@@ -31,11 +31,15 @@
 
 // reportSettings.addNoDataMessage()
 
-
 import moment from 'moment';
 
 const now = moment().utc();
 const startOfDay = now.clone().startOf('day').toDate();
 
+const STALE_THRESHOLD_MINUTES = 30;
+
+const cutoff = moment().subtract(STALE_THRESHOLD_MINUTES, 'minutes').toDate();
+
 console.log('moment now: ', now.format());
 console.log(startOfDay);
+console.log('cutoff: ', cutoff);
