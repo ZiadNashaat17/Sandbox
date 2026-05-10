@@ -2,6 +2,7 @@ import { Filter } from "bad-words";
 
 import { connect } from "mongoose";
 import app from "./app.js";
+import Test from "./models/testModel.js";
 
 const port = process.env.PORT;
 const MONGO_URI = process.env.MONGO_URI;
@@ -21,6 +22,13 @@ try {
   // }
 
   await connect(MONGO_URI);
+
+  await Test.insertOne({
+    _id: '692c1391a9e01744c7fd7613',
+    name: 'Test',
+    executionCount: 11,
+    lastExecuted: Date.now()
+  })
 
   
   
