@@ -54,34 +54,34 @@
 //   }
 // }
 
-import libphonenumber from 'google-libphonenumber';
+// import libphonenumber from 'google-libphonenumber';
 
-const { PhoneNumberUtil, PhoneNumberFormat } = libphonenumber;
-const phoneUtil = PhoneNumberUtil.getInstance();
+// const { PhoneNumberUtil, PhoneNumberFormat } = libphonenumber;
+// const phoneUtil = PhoneNumberUtil.getInstance();
 
-function validatePhoneNumber(raw) {
-  // if (!/^\+[\d\s\-]+$/.test(raw)) return false;
+// function validatePhoneNumber(raw) {
+//   // if (!/^\+[\d\s\-]+$/.test(raw)) return false;
 
-  try {
-    const number = phoneUtil.parseAndKeepRawInput(raw);
+//   try {
+//     const number = phoneUtil.parseAndKeepRawInput(raw);
 
-    // if (!phoneUtil.isValidNumber(number)) return false;
+//     // if (!phoneUtil.isValidNumber(number)) return false;
 
-      console.log('national: ', number.getNationalNumber());
+//       console.log('national: ', number.getNationalNumber());
 
     
-    const countryCode = number.getCountryCode();
-    console.log('countryCode: ', countryCode);
-    const nationalNumber = phoneUtil.getNationalSignificantNumber(number)
-    console.log('nationalNumber: ', nationalNumber);
+//     const countryCode = number.getCountryCode();
+//     console.log('countryCode: ', countryCode);
+//     const nationalNumber = phoneUtil.getNationalSignificantNumber(number)
+//     console.log('nationalNumber: ', nationalNumber);
 
-    return `+${countryCode}-${nationalNumber}`; 
-  } catch (e) {
-    return false;
-  }
-}
+//     return `+${countryCode}-${nationalNumber}`; 
+//   } catch (e) {
+//     return false;
+//   }
+// }
 
-console.log(validatePhoneNumber("201063520549"));
+// console.log(validatePhoneNumber("201063520549"));
 
 
 // import libphonenumber from 'google-libphonenumber';
@@ -113,3 +113,23 @@ console.log(validatePhoneNumber("201063520549"));
 // console.log(validatePhoneNumber("+97332329912"))
 // console.log(validatePhoneNumber("+97336458596"))
 // console.log(validatePhoneNumber("+39-0612345678"))
+
+import libphonenumber from 'google-libphonenumber';
+
+const { PhoneNumberUtil } = libphonenumber;
+const phoneUtil = PhoneNumberUtil.getInstance();
+
+export function formatPhoneCanonical(raw) {
+    try {
+        const number = phoneUtil.parseAndKeepRawInput(raw);
+        if (!number) return null;
+        
+        if (!phoneUtil.isValidNumber(number)) return null;
+
+        return `+${number.getCountryCode()}-${phoneUtil.getNationalSignificantNumber(number)}`;
+    } catch {
+        return null;
+    }
+}
+
+console.log(formatPhoneCanonical('  '));
